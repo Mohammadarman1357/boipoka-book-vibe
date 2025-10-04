@@ -1,6 +1,13 @@
 import React from 'react';
 
-const Header = () => {
+const Navbar = () => {
+
+    const links = <>
+        <li><a href="/">Home</a></li>
+        <li><a href="/">Listed Books</a></li>
+        <li><a href="/">Pages to Read</a></li>
+    </>
+
     return (
         <div>
             <div className="navbar bg-base-100 shadow-sm work-sans-font">
@@ -12,9 +19,9 @@ const Header = () => {
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/">Listed Books</a></li>
-                        <li><a href="/">Pages to Read</a></li>
+                            {
+                                links
+                            }
                         </ul>
                     </div>
                     <a className="text-[28px] text-[#131313] font-bold">Book Vibe</a>
@@ -39,4 +46,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Navbar;
