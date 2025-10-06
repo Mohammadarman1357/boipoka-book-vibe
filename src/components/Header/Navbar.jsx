@@ -1,11 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Navbar = () => {
 
     const links = <>
-        <li><a href="/">Home</a></li>
-        <li><a href="/">Listed Books</a></li>
-        <li><a href="/">Pages to Read</a></li>
+        <Link to={'/about'}><li className='ml-2'>About</li></Link>
+        <li className='ml-2'>Pages to Read</li>
     </>
 
     return (
@@ -19,6 +19,8 @@ const Navbar = () => {
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+
+                            <Link to={'/'}> <li className='ml-2'>Home</li></Link>
                             {
                                 links
                             }
@@ -29,10 +31,11 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 flex items-center ">
                         <li>
-                            <button className='btn btn-outline text-[#23BE0A] font-semibold'>Home</button>
+                            <Link><button className='btn btn-outline text-[#23BE0A] font-semibold'>Home</button></Link>
                         </li>
-                        <li><a href="/">Listed Books</a></li>
-                        <li><a href="/">Pages to Read</a></li>
+                        {
+                            links
+                        }
                     </ul>
                 </div>
                 <div className="navbar-end">
