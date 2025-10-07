@@ -1,6 +1,10 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
 import { addToStoredDB } from '../utility/addToDB';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const MySwal = withReactContent(Swal)
 
 const BookDetails = () => {
     const { id } = useParams();
@@ -10,18 +14,27 @@ const BookDetails = () => {
 
     const { bookName, author, image, category, review, tags, totalPages, yearOfPublishing, publisher, rating } = singleBook;
 
+
+
     const handleRead = id => {
         // store with id
         // where to store
         // array or collection
         // if book already exist then show alert
         // if book not exist then push in the collection of array
+
+        MySwal.fire({
+            title: "Good job!",
+            text: "You clicked the button!",
+            icon: "success"
+        });
+
         addToStoredDB(id);
     }
 
     return (
-        <div className='flex justify-center gap-10 mb-10'>
-            <div className='bg-[#1313130d] py-10 px-25 rounded-2xl flex items-center justify-center'>
+        <div className='flex flex-col md:flex-row justify-center gap-10 mb-10'>
+            <div className='bg-[#1313130d] p-10 md:py-10 md:px-25 rounded-2xl flex items-center justify-center'>
                 <img className='w-70 rounded-xl' src={image} alt="" />
             </div>
             <div className='flex-1'>

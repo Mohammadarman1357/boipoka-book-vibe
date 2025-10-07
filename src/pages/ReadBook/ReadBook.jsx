@@ -6,7 +6,7 @@ const ReadBook = ({ b }) => {
 
 
     return (
-        <div className="flex p-6 gap-5 bg-white rounded-2xl border-1 border-[#13131326] my-5 ">
+        <div className="flex flex-col md:flex-row p-6 gap-5 bg-white rounded-2xl border-1 border-[#13131326] my-5 ">
             <div className="bg-[#F3F3F3] p-6 rounded-2xl">
                 <img className="w-[125px] h-[166px] rounded-xl mx-auto" src={image} alt="" />
             </div>
@@ -16,7 +16,7 @@ const ReadBook = ({ b }) => {
                 <p className="font-medium work-sans-font">By : {author}</p>
 
 
-                <h2 className='flex items-center gap-4 playfair-display-font'>
+                <h2 className='flex flex-col md:flex-row items-center gap-4 playfair-display-font'>
                     <span className='font-bold'>Tags : </span>
                     {
                         tags.map(tag =>
