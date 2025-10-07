@@ -4,6 +4,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { getStoredBook } from '../utility/addToDB';
 import Book from '../Book/Book';
+import ReadBook from '../ReadBook/ReadBook';
 
 const ReadList = () => {
     // worst case
@@ -33,9 +34,8 @@ const ReadList = () => {
                     </TabList>
 
                     <TabPanel>
-                        <h2>Book i read {readList.length}</h2>
                         {
-                            readList.map(b => <Book key={b.bookId} singleBook={b}></Book>)
+                            readList.map(b => <ReadBook key={b.bookId} b={b}></ReadBook>)
                         }
                     </TabPanel>
 
