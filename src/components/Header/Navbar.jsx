@@ -4,13 +4,17 @@ import { Link } from 'react-router';
 const Navbar = () => {
 
     const links = <>
-        <Link to={'/about'}><li className='ml-2'>About</li></Link>
-        <li className='ml-2'>Pages to Read</li>
+
+        <Link to={'/'}><li className='ml-2'><button className='focus:btn focus:btn-outline focus:text-[#23BE0A] focus:font-semibold'>Home</button></li></Link>
+        <Link to={'/about'}><li className='ml-2'><button className='focus:btn focus:btn-outline focus:text-[#23BE0A] focus:font-semibold'>About</button></li></Link>
+        <Link to={'/readList'}><li className='ml-2'><button className='focus:btn focus:btn-outline focus:text-[#23BE0A] focus:font-semibold'>Listed to Read</button></li></Link>
+        <Link ><li className='ml-2'><button className='focus:btn focus:btn-outline focus:text-[#23BE0A] focus:font-semibold'>Pages to Read</button></li></Link>
+        
     </>
 
     return (
         <div>
-            <div className="navbar bg-base-100 shadow-sm work-sans-font">
+            <div className="navbar bg-base-100 work-sans-font">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -20,7 +24,6 @@ const Navbar = () => {
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
 
-                            <Link to={'/'}> <li className='ml-2'>Home</li></Link>
                             {
                                 links
                             }
@@ -30,9 +33,7 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 flex items-center ">
-                        <li>
-                            <Link><button className='btn btn-outline text-[#23BE0A] font-semibold'>Home</button></Link>
-                        </li>
+
                         {
                             links
                         }

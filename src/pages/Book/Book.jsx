@@ -23,11 +23,6 @@ const Book = ({ singleBook }) => {
                         }
                     </div>
 
-
-                    {/* <span>
-                    <button className="text-[#23BE0A] font-medium work-sans-font py-2 px-4 bg-[#23be0a0d] rounded-4xl">{tag1}</button>
-                    <button className="text-[#23BE0A] font-medium work-sans-font py-2 px-4 bg-[#23be0a0d] rounded-4xl ml-3">{tag2}</button>
-                </span> */}
                     <h1 className="font-bold text-2xl playfair-display-font">{bookName}</h1>
                     <p className="font-medium work-sans-font mb-4">By : {author}</p>
 
